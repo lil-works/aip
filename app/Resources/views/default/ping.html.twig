@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <h1>Ping</h1>
+    <p class="lead">{% trans %}Ping from adress-ip server to{% endtrans %} an ip or domain</p>
+
+    <div style="text-align: center;">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+
+    <ul class="list-unstyled">
+        {% for line in process %}
+            <li style="text-align: left;font-size: 1em;">{{ line }}</li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}
+

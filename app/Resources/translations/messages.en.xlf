@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2016-12-24T17:48:56Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="54a2cf5e634dbba0be2bf8a55f79252f5c790bdb" resname="Browser">
+        <source>Browser</source>
+        <target state="new">Browser</target>
+        <jms:reference-file line="16">/../../../../../../../.././app/Resources/views/Services/client-info.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b8135d3ba1fc629558f8949f83e2acd93072e678" resname="Compress your PDF files">
+        <source>Compress your PDF files</source>
+        <target state="new">Compress your PDF files</target>
+        <jms:reference-file line="89">/../../../../../../../.././app/Resources/views/base.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4171ba654d35f8442033013dccc7c686ff1333fa" resname="Compress your pdf files">
+        <source>Compress your pdf files</source>
+        <target state="new">Compress your pdf files</target>
+        <jms:reference-file line="10">/../../../../../../../.././app/Resources/views/default/pdf-compressor.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ba244a5f9cfd88cc3bb7d7b48ef58e2640fa5800" resname="Geo Ip for">
+        <source>Geo Ip for</source>
+        <target state="new">Geo Ip for</target>
+        <jms:reference-file line="6">/../../../../../../../.././app/Resources/views/default/geoip.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bb31b7b76f9986ec0a8eaced27a326489814577b" resname="Get ip location">
+        <source>Get ip location</source>
+        <target state="new">Get ip location</target>
+        <jms:reference-file line="69">/../../../../../../../.././app/Resources/views/base.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="84111dffca9b333d3a9a030c2f835da6976d2470" resname="Information about your system">
+        <source>Information about your system</source>
+        <target state="new">Information about your system</target>
+        <jms:reference-file line="2">/../../../../../../../.././app/Resources/views/Services/client-info.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f183706be4fa63db972cc30c32a41ae0400e694e" resname="Localize an ip adress">
+        <source>Localize an ip adress</source>
+        <target state="new">Localize an ip adress</target>
+        <jms:reference-file line="8">/../../../../../../../.././app/Resources/views/default/geoip.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5a35209b60ae46982b61db75f9984bec839cc172" resname="Operating system">
+        <source>Operating system</source>
+        <target state="new">Operating system</target>
+        <jms:reference-file line="11">/../../../../../../../.././app/Resources/views/Services/client-info.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7cfec1d6977594d30154c4325ad35887b00634cd" resname="PDF tools">
+        <source>PDF tools</source>
+        <target state="new">PDF tools</target>
+        <jms:reference-file line="87">/../../../../../../../.././app/Resources/views/base.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4cfe26f6017c2ab8dfeb8c880582532ae6811cfa" resname="Pdf compressor">
+        <source>Pdf compressor</source>
+        <target state="new">Pdf compressor</target>
+        <jms:reference-file line="6">/../../../../../../../.././app/Resources/views/default/pdf-compressor.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="55bea8b1e438b2ff90c936128318383003b87b5f" resname="Ping an host from here">
+        <source>Ping an host from here</source>
+        <target state="new">Ping an host from here</target>
+        <jms:reference-file line="80">/../../../../../../../.././app/Resources/views/base.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e63d147565e73726c5c970334901dcca3c9e5e38" resname="Ping from adress-ip server to">
+        <source>Ping from adress-ip server to</source>
+        <target state="new">Ping from adress-ip server to</target>
+        <jms:reference-file line="7">/../../../../../../../.././app/Resources/views/default/ping.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f18817970f2f3a4d3d372efef15977b8d92d7f45" resname="Search in whois database">
+        <source>Search in whois database</source>
+        <target state="new">Search in whois database</target>
+        <jms:reference-file line="75">/../../../../../../../.././app/Resources/views/base.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="be212b69c855d2daa68227b5cdddaf742008d66b" resname="Sorry we haven't found location of this ip">
+        <source>Sorry we haven't found location of this ip</source>
+        <target state="new">Sorry we haven't found location of this ip</target>
+        <jms:reference-file line="35">/../../../../../../../.././app/Resources/views/default/geoip.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e900d7cdb3351a71482ba3cf1bd0fcf4a89ed1ab" resname="This product includes GeoLite2 data created by MaxMind, available from&#10;                &lt;a href=&quot;http://www.maxmind.com&quot;&gt;http://www.maxmind.com&lt;/a&gt;.">
+        <source><![CDATA[This product includes GeoLite2 data created by MaxMind, available from
+                <a href="http://www.maxmind.com">http://www.maxmind.com</a>.]]></source>
+        <target state="new"><![CDATA[This product includes GeoLite2 data created by MaxMind, available from
+                <a href="http://www.maxmind.com">http://www.maxmind.com</a>.]]></target>
+        <jms:reference-file line="26">/../../../../../../../.././app/Resources/views/default/geoip.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="232b9b1d6a6f08bd4971f9cd794b257898484d7f" resname="Your ip is">
+        <source>Your ip is</source>
+        <target state="new">Your ip is</target>
+        <jms:reference-file line="5">/../../../../../../../.././app/Resources/views/Services/client-info.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bf279f7b51867b99997b9218d01df367d0199c9b" resname="geoip">
+        <source>geoip</source>
+        <target state="new">geoip</target>
+        <jms:reference-file line="7">/../../../../../../../.././app/Resources/views/Services/client-info.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="15cb8ac538379726b8a14d6cc33d0dbad4a053fd" resname="search for domain in whois database">
+        <source>search for domain in whois database</source>
+        <target state="new">search for domain in whois database</target>
+        <jms:reference-file line="7">/../../../../../../../.././app/Resources/views/default/whois.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

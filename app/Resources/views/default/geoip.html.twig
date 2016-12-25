@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <h1>{% trans %}Geo Ip for{% endtrans %} {{ ip }}</h1>
+    <p class="lead">
+        {% trans %}Localize an ip adress{% endtrans %}
+    </p>
+
+    <div style="text-align: center;">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+
+
+    {% if record is not null %}
+        <div class="geoip_content" >
+            <ul class="list-unstyled">
+                <li>
+                    {% if record.city.name is defined %}
+                    {% trans %}City:{% endtrans %} {{ record.city.name }} -
+                    {% endif %}
+                    <img src="{{ asset("bundles/app/images/flags/") ~ record.country.isoCode|minimize ~ ".png"  }}" alt="[{% trans %}Country{% endtrans %} - {{ record.country.name }}]" /> - (Lon:{{ record.location.longitude }}, Lat:{{ record.location.latitude }})</li>
+            </ul>
+            <div class="map" id="map" onload="WIMIAload()" onunload="GUnload()"></div>
+            <i>
+                {% trans %}This product includes GeoLite2 data created by MaxMind, available from
+                <a href="http://www.maxmind.com">http://www.maxmind.com</a>.{% endtrans %}
+            </i>
+        </div>
+        <script  type="text/javascript">
+            gload({{ record.location.latitude }},{{ record.location.longitude }}, "coordonn&eacute;es:<strong>{{ record.location.latitude }},{{ record.location.longitude }}</strong><br/>ip:<strong>92.243.27.44</strong><br/>ville:<strong>Paris</strong><br/> ;-)");
+        </script>
+    {% else %}
+        <div>
+            {% trans %}Sorry we haven't found location of this ip{% endtrans %}
+        </div>
+    {% endif %}
+
+
+
+    <div class="geoip_content">
+        {{ clientInfo|raw }}
+    </div>
+
+
+
+
+{% endblock %}
+

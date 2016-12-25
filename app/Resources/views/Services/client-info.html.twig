@@ -1,0 +1,23 @@
+<h3>
+    {% trans %}Information about your system{% endtrans %}
+</h3>
+<p>
+    {% trans %}Your ip is{% endtrans %}
+    {{ ip }}
+    <a href="{{ path('site_geoip',{ip:ip}) }}"><i class="glyphicon glyphicon-screenshot"></i>{% trans %}geoip{% endtrans %}</a>
+</p>
+<ul class="text-left list-unstyled">
+    <li>
+        {% trans %}Operating system{% endtrans %}
+        <img src="{{ asset("bundles/app/images/os/") ~ osIco  }}" alt="{{ os }}" />
+        {{ os }}
+    </li>
+    <li>
+        {% trans %}Browser{% endtrans %}
+        <img src="{{ asset("bundles/app/images/browsers/") ~ browserIco  }}" alt="{{ browser }}" />
+        {{ browser }}
+    </li>
+
+
+</ul>
+

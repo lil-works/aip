@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <h1>Whois</h1>
+    <p class="lead">{% trans %}search for domain in whois database{% endtrans %}</p>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+    <ul class="list-unstyled">
+        {% for line in process %}
+            <li style="text-align: left;font-size: 1em;">{{ line }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

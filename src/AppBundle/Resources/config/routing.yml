@@ -1,0 +1,27 @@
+site_homepage:
+    path: /
+    defaults: { _controller: AppBundle:Default:index  }
+
+
+site_geoip:
+    path: /geoip/{ip}
+    defaults: { _controller: AppBundle:Default:geoip , ip: null }
+
+site_whois:
+    path: /whois/{domain}
+    defaults: { _controller: AppBundle:Default:whois , domain: not-set }
+
+site_ping:
+    path: /ping/{domain}
+    defaults: { _controller: AppBundle:Default:ping , domain: client }
+
+site_pdf_compressor:
+    path: /pdf-compressor
+    defaults: { _controller: AppBundle:Default:pdfCompressor  }
+
+ajax_readTextfile:
+    path:     /ajax/read-textfile/{filename}
+    defaults: { _controller: AppBundle:Ajax:readTextfile  }
+    options:
+        expose: true
+        i18n: false

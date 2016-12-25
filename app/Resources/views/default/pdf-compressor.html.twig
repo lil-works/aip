@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>
+        {% trans %}Pdf compressor{% endtrans %}
+    </h1>
+
+    <p class="lead">
+        {% trans %}Compress your pdf files{% endtrans %}
+    </p>
+
+    <div style="text-align: center;">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
+
