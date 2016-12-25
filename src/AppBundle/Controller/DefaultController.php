@@ -53,10 +53,8 @@ class DefaultController extends Controller
             $datas = $form->getData();
             $file = $datas["file"];
 
-
             // Generate a unique name for the file before saving it
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
-
+            $fileName = md5(uniqid()).'.'.$file->getClientOriginalExtension();
 
 
             $file->move(
@@ -73,9 +71,12 @@ class DefaultController extends Controller
             $process = new Process($command);
             $process->run();
 
-            if ($process->isSuccessful()) {
-                $process = new Process("find ".$this->getParameter('pdf-compressor_directory')." -mmin +5 -type f -delete");
+            if ( $process->isSuccessful()) {
+                $process = new Process("find ".$this->getParameter('pdf-compressor_directory')."/*.pdf -mmin +5 -type f -delete");
                 $process->run();
+                $process = new Process('echo "FILENAME: '.$fileName.' NEWNAME: '.$newName.'" >> '.$this->getParameter('pdf-compressor_directory').'/pdf-compressor.log');
+                $process->run();
+
                 $response = new BinaryFileResponse($this->getParameter('pdf-compressor_directory')."/".$fileName);
                 $response->setContentDisposition(ResponseHeaderBag::DISPOSITION_ATTACHMENT,$newName);
                 return  $response;
