@@ -68,17 +68,20 @@ class DefaultController extends Controller
             $explode = explode(".".$file->getClientOriginalExtension(),$file->getClientOriginalName());
             $newName = "compressed_".$explode[0].".".$file->getClientOriginalExtension();
 
-            $command = "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=".$this->getParameter('pdf-compressor_directory')."/".$fileName." ".$this->getParameter('pdf-compressor_directory')."/".$fileName;
+            //$command = "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=".$this->getParameter('pdf-compressor_directory')."/".$fileName." ".$this->getParameter('pdf-compressor_directory')."/".$fileName;
+            $command = "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=".$this->getParameter('pdf-compressor_directory')."/".$fileName." ".$this->getParameter('pdf-compressor_directory')."/".$fileName;
             $process = new Process($command);
             $process->run();
 
-            $process = new Process("find ".$this->getParameter('pdf-compressor_directory')." -mmin +5 -type f -delete");
-            $process->run();
-
-
-            $response = new BinaryFileResponse($this->getParameter('pdf-compressor_directory')."/".$fileName);
-            $response->setContentDisposition(ResponseHeaderBag::DISPOSITION_ATTACHMENT,$newName);
-            return  $response;
+            if ($process->isSuccessful()) {
+                $process = new Process("find ".$this->getParameter('pdf-compressor_directory')." -mmin +5 -type f -delete");
+                $process->run();
+                $response = new BinaryFileResponse($this->getParameter('pdf-compressor_directory')."/".$fileName);
+                $response->setContentDisposition(ResponseHeaderBag::DISPOSITION_ATTACHMENT,$newName);
+                return  $response;
+            }else{
+                throw new ProcessFailedException($process);
+            }
 
         }
         return $this->render('default/pdf-compressor.html.twig',array(

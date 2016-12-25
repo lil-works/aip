@@ -25,14 +25,23 @@
                     <img src="{{ asset("bundles/app/images/flags/") ~ record.country.isoCode|minimize ~ ".png"  }}" alt="[{% trans %}Country{% endtrans %} - {{ record.country.name }}]" /> - (Lon:{{ record.location.longitude }}, Lat:{{ record.location.latitude }})</li>
             </ul>
 
-            <div id="map"></div>
+            <div id="map" style="width: 600px; height:300px;"></div>
             <script>
                 function initMap() {
+                    var myLatLng = {lat:{{ record.location.latitude }}, lng: {{ record.location.longitude }}};
+
                     // Create a map object and specify the DOM element for display.
                     var map = new google.maps.Map(document.getElementById('map'), {
-                        center: {lat: {{ record.location.latitude }}, lng: {{ record.location.longitude }}},
+                        center: myLatLng,
                         scrollwheel: false,
-                        zoom: 8
+                        zoom: 10
+                    });
+
+                    // Create a marker and set its position.
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: myLatLng,
+                        title: '{{ ip }}'
                     });
                 }
 
