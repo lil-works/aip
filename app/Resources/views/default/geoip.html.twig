@@ -24,15 +24,34 @@
                     {% endif %}
                     <img src="{{ asset("bundles/app/images/flags/") ~ record.country.isoCode|minimize ~ ".png"  }}" alt="[{% trans %}Country{% endtrans %} - {{ record.country.name }}]" /> - (Lon:{{ record.location.longitude }}, Lat:{{ record.location.latitude }})</li>
             </ul>
-            <div class="map" id="map" onload="WIMIAload()" onunload="GUnload()"></div>
+
+            <div id="map"></div>
+            <script>
+                function initMap() {
+                    // Create a map object and specify the DOM element for display.
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        center: {lat: {{ record.location.latitude }}, lng: {{ record.location.longitude }}},
+                        scrollwheel: false,
+                        zoom: 8
+                    });
+                }
+
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdnVlGwp13imTYb02hgJCrnM_aG22BIFU&callback=initMap"
+                    async defer></script>
+
+
+
+
             <i>
                 {% trans %}This product includes GeoLite2 data created by MaxMind, available from
                 <a href="http://www.maxmind.com">http://www.maxmind.com</a>.{% endtrans %}
             </i>
         </div>
-        <script  type="text/javascript">
-            gload({{ record.location.latitude }},{{ record.location.longitude }}, "coordonn&eacute;es:<strong>{{ record.location.latitude }},{{ record.location.longitude }}</strong><br/>ip:<strong>92.243.27.44</strong><br/>ville:<strong>Paris</strong><br/> ;-)");
-        </script>
+
+
+
+
     {% else %}
         <div>
             {% trans %}Sorry we haven't found location of this ip{% endtrans %}
