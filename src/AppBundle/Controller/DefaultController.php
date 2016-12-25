@@ -55,7 +55,6 @@ class DefaultController extends Controller
             // Generate a unique name for the file before saving it
             $fileName = md5(uniqid()).'.'.$file->getClientOriginalExtension();
 
-
             $file->move(
                 $this->getParameter('pdf-compressor_directory'),
                 $fileName
@@ -66,7 +65,8 @@ class DefaultController extends Controller
             $newName = "compressed_".$explode[0].".".$file->getClientOriginalExtension();
 
             //$command = "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=".$this->getParameter('pdf-compressor_directory')."/".$fileName." ".$this->getParameter('pdf-compressor_directory')."/".$fileName;
-            $command = "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=".$this->getParameter('pdf-compressor_directory')."/".$fileName." ".$this->getParameter('pdf-compressor_directory')."/".$fileName;
+            //$command = "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=".$this->getParameter('pdf-compressor_directory')."/".$fileName." ".$this->getParameter('pdf-compressor_directory')."/".$fileName;
+            $command = "ls";
             $process = new Process($command);
             $process->run();
 
