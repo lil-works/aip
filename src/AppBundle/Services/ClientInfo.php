@@ -177,8 +177,8 @@ class ClientInfo implements ContainerAwareInterface
             "os"=>$this->getOs(),
             "osIco"=>$this->getOsIco($this->getOs()),
             "browser"=>$this->getBrowser(),
-            "browserIco"=>$this->getBrowserIco($this->getBrowser()),
-            "locale"=>locale_get_default()
+            "browserIco"=>$this->getBrowserIco($this->getBrowser())
+
         ));
     }
 }
