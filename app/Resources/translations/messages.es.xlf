@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2016-12-25T02:07:50Z" source-language="en" target-language="es" datatype="plaintext" original="not.available">
+  <file date="2016-12-26T14:22:03Z" source-language="en" target-language="es" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -18,8 +18,8 @@
       </trans-unit>
       <trans-unit id="8071c579d242e5c22c70a231e0ca089620e72d22" resname="Compress PDF file">
         <source>Compress PDF file</source>
-        <target state="new">Compress PDF file</target>
-        <jms:reference-file line="47">/../../../../../../../.././src/AppBundle/Controller/DefaultController.php</jms:reference-file>
+        <target>Compress PDF file</target>
+        <jms:reference-file line="46">/../../../../../../../.././src/AppBundle/Controller/DefaultController.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="b8135d3ba1fc629558f8949f83e2acd93072e678" resname="Compress your PDF files">
         <source>Compress your PDF files</source>
@@ -38,8 +38,8 @@
       </trans-unit>
       <trans-unit id="c8147c346ba1e1a3418d6ef8df95bcc3171903b7" resname="Find the localization of an ip">
         <source>Find the localization of an ip</source>
-        <target state="new">Find the localization of an ip</target>
-        <jms:reference-file line="152">/../../../../../../../.././src/AppBundle/Controller/DefaultController.php</jms:reference-file>
+        <target>Find the localization of an ip</target>
+        <jms:reference-file line="155">/../../../../../../../.././src/AppBundle/Controller/DefaultController.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="ba244a5f9cfd88cc3bb7d7b48ef58e2640fa5800" resname="Geo Ip for">
         <source>Geo Ip for</source>
@@ -53,8 +53,8 @@
       </trans-unit>
       <trans-unit id="70f8bb9a8a5393ef080507a89e4b98d139000d65" resname="Home">
         <source>Home</source>
-        <target state="new">Inicio</target>
-        <jms:reference-file line="28">/../../../../../../../.././src/AppBundle/Controller/DefaultController.php</jms:reference-file>
+        <target>Inicio</target>
+        <jms:reference-file line="27">/../../../../../../../.././src/AppBundle/Controller/DefaultController.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="84111dffca9b333d3a9a030c2f835da6976d2470" resname="Information about your system">
         <source>Information about your system</source>
@@ -73,8 +73,8 @@
       </trans-unit>
       <trans-unit id="73425d2d1fdf176319702d01809ea0539354f010" resname="PDF Compressor">
         <source>PDF Compressor</source>
-        <target state="new">Compreción de ficheros PDF</target>
-        <jms:reference-file line="46">/../../../../../../../.././src/AppBundle/Controller/DefaultController.php</jms:reference-file>
+        <target>Compreción de ficheros PDF</target>
+        <jms:reference-file line="45">/../../../../../../../.././src/AppBundle/Controller/DefaultController.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="7f7b61c3d0574fa0bae27972834652c8b6f222e6" resname="PDF file">
         <source>PDF file</source>
@@ -86,6 +86,11 @@
         <target>Herramientas para PDF</target>
         <jms:reference-file line="88">/../../../../../../../.././app/Resources/views/base.html.twig</jms:reference-file>
       </trans-unit>
+      <trans-unit id="bc3023b36063a7681db24681472b54fa11f0d4ec" resname="Page not found">
+        <source>Page not found</source>
+        <target state="new">Pagina no encontrada</target>
+        <jms:reference-file line="4">/../../../../../../../.././app/Resources/TwigBundle/views/Exception/error404.html.twig</jms:reference-file>
+      </trans-unit>
       <trans-unit id="4cfe26f6017c2ab8dfeb8c880582532ae6811cfa" resname="Pdf compressor">
         <source>Pdf compressor</source>
         <target>Compreción PDF</target>
@@ -93,8 +98,8 @@
       </trans-unit>
       <trans-unit id="af64f54416b67c2e80bd2ce6656031fa1782acb6" resname="Ping an host from adress-ip server">
         <source>Ping an host from adress-ip server</source>
-        <target state="new">Ping an host from adress-ip server</target>
-        <jms:reference-file line="95">/../../../../../../../.././src/AppBundle/Controller/DefaultController.php</jms:reference-file>
+        <target>Ping un servidor desde adress-ip</target>
+        <jms:reference-file line="98">/../../../../../../../.././src/AppBundle/Controller/DefaultController.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="55bea8b1e438b2ff90c936128318383003b87b5f" resname="Ping an host from here">
         <source>Ping an host from here</source>
@@ -110,24 +115,30 @@
         <source>Search in whois database</source>
         <target>Buscar en los datos de whois</target>
         <jms:reference-file line="76">/../../../../../../../.././app/Resources/views/base.html.twig</jms:reference-file>
-        <jms:reference-file line="124">/../../../../../../../.././src/AppBundle/Controller/DefaultController.php</jms:reference-file>
+        <jms:reference-file line="127">/../../../../../../../.././src/AppBundle/Controller/DefaultController.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="be212b69c855d2daa68227b5cdddaf742008d66b" resname="Sorry we haven't found location of this ip">
         <source>Sorry we haven't found location of this ip</source>
         <target>Lo sentimos pero no hemos encontrado localización para esta ip</target>
-        <jms:reference-file line="38">/../../../../../../../.././app/Resources/views/default/geoip.html.twig</jms:reference-file>
+        <jms:reference-file line="66">/../../../../../../../.././app/Resources/views/default/geoip.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6a0fd0dec7cbca02715a0a55baa57b05fd0dc85f" resname="The requested page couldn't be located. Checkout for any URL&#10;        misspelling">
+        <source xml:space="preserve">The requested page couldn't be located. Checkout for any URL
+        misspelling</source>
+        <target xml:space="preserve" state="new">Esta pagina no existe</target>
+        <jms:reference-file line="8">/../../../../../../../.././app/Resources/TwigBundle/views/Exception/error404.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="e900d7cdb3351a71482ba3cf1bd0fcf4a89ed1ab" resname="This product includes GeoLite2 data created by MaxMind, available from&#10;                &lt;a href=&quot;http://www.maxmind.com&quot;&gt;http://www.maxmind.com&lt;/a&gt;.">
         <source><![CDATA[This product includes GeoLite2 data created by MaxMind, available from
                 <a href="http://www.maxmind.com">http://www.maxmind.com</a>.]]></source>
         <target><![CDATA[This product includes GeoLite2 data created by MaxMind, available from
                 <a href="http://www.maxmind.com">http://www.maxmind.com</a>.]]></target>
-        <jms:reference-file line="29">/../../../../../../../.././app/Resources/views/default/geoip.html.twig</jms:reference-file>
+        <jms:reference-file line="56">/../../../../../../../.././app/Resources/views/default/geoip.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="25019c2c793b2bd3051ff1ebf97f16b79b6d601a" resname="What is my ip?">
         <source>What is my ip?</source>
-        <target state="new">Cual es mi IP</target>
-        <jms:reference-file line="29">/../../../../../../../.././src/AppBundle/Controller/DefaultController.php</jms:reference-file>
+        <target>Cual es mi IP</target>
+        <jms:reference-file line="28">/../../../../../../../.././src/AppBundle/Controller/DefaultController.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="232b9b1d6a6f08bd4971f9cd794b257898484d7f" resname="Your ip is">
         <source>Your ip is</source>
@@ -138,6 +149,11 @@
         <source>geoip</source>
         <target>geoip</target>
         <jms:reference-file line="7">/../../../../../../../.././app/Resources/views/Services/client-info.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d858d9a496729d1aab181b0d1cd22ff6b3d1d30f" resname="return to the homepage">
+        <source>return to the homepage</source>
+        <target state="new">return to the homepage</target>
+        <jms:reference-file line="12">/../../../../../../../.././app/Resources/TwigBundle/views/Exception/error404.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="15cb8ac538379726b8a14d6cc33d0dbad4a053fd" resname="search for domain in whois database">
         <source>search for domain in whois database</source>
