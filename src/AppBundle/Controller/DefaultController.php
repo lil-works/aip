@@ -66,7 +66,7 @@ class DefaultController extends Controller
 
             //$command = "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=".$this->getParameter('pdf-compressor_directory')."/".$fileName." ".$this->getParameter('pdf-compressor_directory')."/".$fileName;
             $command = "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=".$this->getParameter('pdf-compressor_directory')."/comp-".$fileName." ".$this->getParameter('pdf-compressor_directory')."/".$fileName;
-            
+
             $process = new Process($command);
             $process->run();
 
@@ -76,7 +76,7 @@ class DefaultController extends Controller
                 $process = new Process('echo "FILENAME: '.$fileName.' NEWNAME: '.$newName.'" >> '.$this->getParameter('pdf-compressor_directory').'/pdf-compressor.log');
                 $process->run();
 
-                $response = new BinaryFileResponse($this->getParameter('pdf-compressor_directory')."/".$fileName);
+                $response = new BinaryFileResponse($this->getParameter('pdf-compressor_directory')."/comp-".$fileName);
                 $response->setContentDisposition(ResponseHeaderBag::DISPOSITION_ATTACHMENT,$newName);
                 return  $response;
             }else{
