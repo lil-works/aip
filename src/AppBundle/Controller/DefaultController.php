@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Controller;
 
+use AppBundle\Form\VideoType;
 use AppBundle\Form\WhoisType;
 use AppBundle\Form\PdfType;
 use AppBundle\Form\IpType;
@@ -8,6 +9,7 @@ use AppBundle\Form\PingType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use GeoIp2\Database\Reader;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
@@ -18,6 +20,80 @@ use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 class DefaultController extends Controller
 {
 
+    public function videoAction(Request $request)
+    {
+        $translator = $this->get('translator');
+
+        $seoPage = $this->container->get('sonata.seo.page');
+        $seoPage
+            ->setTitle($seoPage->getTitle() . " • ". $translator->trans('Video downloader'))
+            ->addMeta('name', 'description', $translator->trans('Download video from youtube'))
+        ;
+
+        $form = $this->createForm(VideoType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $datas = $form->getData();
+            $url = $datas["url"];
+            $process = new Process("/usr/local/bin/youtube-dl --dump-json  $url");
+            $process->start();
+
+            $process->wait(function ($type, $buffer) {
+                if (Process::ERR === $type) {
+                    //echo 'ERR > '.$buffer;
+                } else {
+                    // echo 'OUT > '.$buffer;
+                }
+            });
+
+            return $this->render('default/video.html.twig', [
+                "form" => $form->createView(),
+                "process" => json_decode( $process->getOutput() ),
+            ]);
+
+        }
+
+        return $this->render('default/video.html.twig', [
+            "form"=>$form->createView(),
+
+        ]);
+    }
+    public function downloadAudioAction(Request $request,$format)
+    {
+        /*
+        $command = "youtube-dl --extract-audio --audio-format $format --audio-quality 0 ";
+        $process = new Process($command);
+        $process->start();
+
+        $process->wait(function ($type, $buffer) {
+            if (Process::ERR === $type) {
+                //echo 'ERR > '.$buffer;
+            } else {
+                // echo 'OUT > '.$buffer;
+            }
+        });*/
+        $command = "youtube-dl -o file http://www.youtube.com/watch?v=Y54ABqSOScQ";
+        $process = new Process($command);
+        $process->start();
+
+        $process->wait(function ($type, $buffer) {
+            if (Process::ERR === $type) {
+                //echo 'ERR > '.$buffer;
+            } else {
+                // echo 'OUT > '.$buffer;
+            }
+        });
+
+        $response = new BinaryFileResponse( "file.mkva" );
+        $response->setContentDisposition(ResponseHeaderBag::DISPOSITION_ATTACHMENT,"foo.pdf");
+        return  $response;
+
+
+    }
+    public function downloadAction(Request $request)
+    {
+
+    }
     public function indexAction(Request $request)
     {
         $translator = $this->get('translator');

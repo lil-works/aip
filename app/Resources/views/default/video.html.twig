@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <h1>{% trans %}Download video{% endtrans %}</h1>
+    <p class="lead">{% trans %}Download video from youtube{% endtrans %}</p>
+
+    <div style="text-align: center;">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+
+
+    {% if process is defined %}
+
+        <h2>{{ process.title }}</h2>
+
+        <p>{% trans %}Uploaded by {% endtrans %} {{ process.uploader }}</p>
+        <p>{% trans %}License {% endtrans %} {{ process.license }}</p>
+
+        <ul class="list-inline">
+        {% for thumbnail in process.thumbnails%}
+            <li>
+                <img class="img-responsive" src="{{ thumbnail.url }}">
+            </li>
+        {% endfor %}
+        </ul>
+
+
+
+        <div>
+            <h3>{% trans %}choose your download format{% endtrans %}</h3>
+        </div>
+
+
+
+        {% set audioFormats = ['mp3','vorbis','wave','aac','m4a','opus'] %}
+        <h3>{% trans %}Only audio{% endtrans %}</h3>
+        <ul class="list-inline">
+        {% for audioFormat in audioFormats %}
+            <li>
+                <a href="{{ path('site_video_download_audio' , { format:audioFormat}) }}">
+                    <i class="glyphicon glyphicon-download"></i>{{ audioFormat }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+        <table class="table">
+            <thead>
+            <tr>
+
+                <th>{% trans %}Format{% endtrans %}</th>
+                <th>{% trans %}Extention{% endtrans %}</th>
+                <th>Codec</th>
+                <th>{% trans %}Width/Height{% endtrans %}</th>
+                <th>{% trans %}filesize{% endtrans %}</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for format in process.formats%}
+
+
+
+                <tr>
+                    <td>{{ format.format }}</td>
+                    <td>{{ format.ext }}</td>
+                    <td>{{ format.acodec }}</td>
+                    <td>
+
+                        {% if format.width is defined and format.width>0  %}
+                            {{ format.width }} x {{ format.height }}
+                        {% else %}
+                            {% trans %}NA{% endtrans %}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if format.filesize is defined %}
+                            {{ format.filesize|formatBytes }}
+                        {% else %}
+                            ?
+                        {% endif %}
+                    </td>
+<td>{{ format.url }}</td>
+                    <td>
+                        <a href="{{ path('site_video_download') }}">
+                            <i class="glyphicon glyphicon-download"></i>
+                            {% trans %}download{% endtrans %}
+                        </a>
+                    </td>
+
+
+
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
+

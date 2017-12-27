@@ -19,7 +19,7 @@ class PdfType extends AbstractType
                 'attr' => array('class'=>'btn btn-default btn-file'),
                     'constraints' => [
                         new File([
-                            'maxSize' => '100M',
+                            'maxSize' => '50M',
                             'mimeTypes' => [
                                 'application/pdf',
                                 'application/x-pdf',

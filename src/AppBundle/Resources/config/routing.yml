@@ -7,6 +7,18 @@ site_geoip:
     path: /geoip/{ip}
     defaults: { _controller: AppBundle:Default:geoip , ip: null }
 
+site_video_downloader:
+    path: /download-video
+    defaults: { _controller: AppBundle:Default:video }
+
+site_video_download:
+    path: /download-video/download
+    defaults: { _controller: AppBundle:Default:download }
+
+site_video_download_audio:
+    path: /download-video/audio/{format}
+    defaults: { _controller: AppBundle:Default:downloadAudio }
+
 site_whois:
     path: /whois/{domain}
     defaults: { _controller: AppBundle:Default:whois , domain: not-set }
